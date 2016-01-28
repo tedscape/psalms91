@@ -4,8 +4,6 @@
   "description": "Boilerplate for ReactJS, Babel, Webpack, React Router, Redux",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --watch",
-    "build": "webpack -p",
     "start":"node server.js"
   },
   "keywords": [

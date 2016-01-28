@@ -14,15 +14,17 @@ var config = {
         ],
     output: {
         path: BUILD_DIR,
-        filename: 'app.js'
+        filename: 'app.js',
+        publicPath: '/public/'
 
     },
     module: {
         loaders:[{
-            test : /\.jsx?/,
+            test : /\.js$/,
 
             loaders:['react-hot','babel'],
             include :APP_DIR
+
         }]
     },
     plugins:[
