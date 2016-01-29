@@ -7,8 +7,9 @@ var BUILD_DIR = path.resolve(__dirname, './public/');
 var APP_DIR = path.resolve(__dirname, 'src/');
 
 var config = {
+    context: __dirname,
     entry:[
-        'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
+        'webpack-dev-server/client?http://localhost:3000/', // WebpackDevServer host and port
         'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
         APP_DIR + '/index.js'
         ],
@@ -21,15 +22,15 @@ var config = {
     module: {
         loaders:[{
             test : /\.js$/,
-
+            exclude:'/node_modules/',
             loaders:['react-hot','babel'],
             include :APP_DIR
 
         }]
     },
-    plugins:[
+    /*plugins:[
         new webpack.HotModuleReplacementPlugin()
-    ]
+    ]*/
 
 };
 

@@ -4,7 +4,7 @@
   "description": "Boilerplate for ReactJS, Babel, Webpack, React Router, Redux",
   "main": "index.js",
   "scripts": {
-    "start":"node server.js"
+    "start":"webpack-dev-server  --inline --hot --progress --colors"
   },
   "keywords": [
     "ReactJS",
