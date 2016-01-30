@@ -7,12 +7,12 @@ var BUILD_DIR = path.resolve(__dirname, './public/');
 var APP_DIR = path.resolve(__dirname, 'src/');
 
 var config = {
-    context: __dirname,
-    entry:[
-        'webpack-dev-server/client?http://localhost:3000/', // WebpackDevServer host and port
-        'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-        APP_DIR + '/index.js'
-        ],
+
+    entry: [
+        'eventsource-polyfill',
+        'webpack-hot-middleware/client',
+        './src/index.js'
+    ],
     output: {
         path: BUILD_DIR,
         filename: 'app.js',
@@ -20,17 +20,19 @@ var config = {
 
     },
     module: {
-        loaders:[{
-            test : /\.js$/,
-            exclude:'/node_modules/',
-            loaders:['react-hot','babel'],
-            include :APP_DIR
+        loaders: [{
+            test: /\.js$/,
+            exclude: '/node_modules/',
+            loaders: ['react-hot', 'babel'],
+            include: APP_DIR
 
         }]
     },
-    /*plugins:[
-        new webpack.HotModuleReplacementPlugin()
-    ]*/
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ]
+
 
 };
 
