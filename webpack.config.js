@@ -1,14 +1,14 @@
 var webpack = require('webpack');
 var path = require('path');
 var autoprefixer = require('autoprefixer');
-
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 //In Node.js, __dirname is always the directory in which the currently executing script resides
 
 var BUILD_DIR = path.resolve(__dirname, './public/');
 var APP_DIR = path.resolve(__dirname, 'src/');
 
-var bootstrapPath = path.resolve(__dirname, './node_modules/bootstrap/dist/css/bootstrap.min.css');
+//var bootstrapPath = path.resolve(__dirname, './node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 var config = {
 
@@ -33,30 +33,33 @@ var config = {
                 include: APP_DIR
 
             },
+
             {
                 test: /\.css$/,
-                loaders: ['style', 'css', 'postcss']
+                loaders: ['style', 'css','resolve-url']
             },
-            {
-                test: /\.scss$/,
-                loaders: ['style', 'css', 'postcss', 'sass']
-            },
+
             {
                 test: /\.(woff2?|ttf|eot|svg)$/,
                 loader: 'url?limit=10000'
             },
             {
-                test: /bootstrap-sass\/assets\/javascripts\//,
-                loader: 'imports?jQuery=jquery'
-            },
+                test: /\.scss$/,
+                include: '/src/assets/styles/',
+
+                loaders: ['css','sass', 'resolve-url']
+            }
 
         ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new ExtractTextPlugin('public/style.css', {
+            allChunks: true
+        })
     ],
-    postcss: [ autoprefixer ]
+    postcss: [autoprefixer]
 
 
 };

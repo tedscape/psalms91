@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import HeaderComponent from './components/layout/header-description/header';
 import FooterComponent from './components/layout/footer/footer';
+import 'css!sass!./assets/styles/bootstrap/bootstrap.scss';
 
 
 class App extends React.Component {
