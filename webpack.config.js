@@ -15,7 +15,7 @@ var config = {
     entry: [
         'eventsource-polyfill',
         'webpack-hot-middleware/client',
-        'bootstrap-loader',
+
         './src/index.js'
     ],
     output: {
@@ -36,7 +36,7 @@ var config = {
 
             {
                 test: /\.css$/,
-                loaders: ['style', 'css','resolve-url']
+                loaders: ['style', 'css']
             },
 
             {
@@ -45,21 +45,18 @@ var config = {
             },
             {
                 test: /\.scss$/,
-                include: '/src/assets/styles/',
 
-                loaders: ['css','sass', 'resolve-url']
+
+                loaders: ['style', 'css','sass']
             }
 
         ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
-        new ExtractTextPlugin('public/style.css', {
-            allChunks: true
-        })
-    ],
-    postcss: [autoprefixer]
+        new webpack.NoErrorsPlugin()
+
+    ]
 
 
 };
