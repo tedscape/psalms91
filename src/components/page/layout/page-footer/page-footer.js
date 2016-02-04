@@ -1,6 +1,7 @@
 import React from 'react';
+import './page-footer.scss';
 
-class FooterComponent extends React.Component{
+class PageFooterComponent extends React.Component{
     render(){
         return <footer className="footer navbar navbar-fixed-bottom navbar-default">
             <div className= "container text-center ">
@@ -12,4 +13,4 @@ class FooterComponent extends React.Component{
     }
 }
 
-export default FooterComponent;
+export default PageFooterComponent;

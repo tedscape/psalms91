@@ -1,6 +1,7 @@
 import React from 'react';
+import './page-header.scss';
 
-class HeaderComponent extends React.Component {
+class PageHeaderComponent extends React.Component {
 
     render(){
         return <div className="navbar navbar-default">
@@ -15,4 +16,4 @@ class HeaderComponent extends React.Component {
     }
 }
 
-export default HeaderComponent;
+export default PageHeaderComponent;
