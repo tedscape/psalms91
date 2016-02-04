@@ -2,9 +2,13 @@ import React from 'react';
 
 class FooterComponent extends React.Component{
     render(){
-        return <div>
-            <button className="btn btn-danger">Footer Button</button>
-        </div>
+        return <footer className="footer navbar navbar-fixed-bottom navbar-default">
+            <div className= "container">
+                    <div className="text-center navbar-text">
+                        @{this.props.brandName}
+                    </div>
+            </div>
+        </footer>
     }
 }
 

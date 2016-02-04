@@ -10,7 +10,7 @@ class App extends React.Component {
         return <div>
             <HeaderComponent text="ReactJS boilerplate"
                              description="This boilerplate consist of the setup React, Redux, Babel, Webpack etc and can be used as a base for other apps."></HeaderComponent>
-            <FooterComponent />
+            <FooterComponent brandName="Tedscape"/>
         </div>;
     }
 }
