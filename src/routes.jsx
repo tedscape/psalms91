@@ -3,18 +3,25 @@ import {
     Route,
     Router,
     browserHistory,
+    IndexRoute,
 } from 'react-router';
 import {
   HomePage,
   SearchPage,
+  DetailsPage,
   // NotFoundPage,
 } from './containers/pages';
+import CoreLayout from './layouts/coreLayout';
 
 const routes = () => (
   <Router history={browserHistory}>
-    <Route path="/" component={HomePage} />
-    <Route path="Home" component={HomePage} />
-    <Route path="Search" component={SearchPage} />
+    <Route path="/" component={CoreLayout}>
+      <IndexRoute component={HomePage} />
+      <Route path="make" component={DetailsPage}>
+        <Route path="model" component={SearchPage} />
+      </Route>
+      <Route path="Search" component={SearchPage} />
+    </Route>
   </Router>
 );
 export default routes;

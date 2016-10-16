@@ -1,10 +1,11 @@
 import React from 'react';
-import CoreLayout from '../../layouts/coreLayout';
+import { Link } from 'react-router';
 
 const HomePage = () => (
-  <CoreLayout>
+  <div>
     <h2>HomePage</h2>
-  </CoreLayout>
+    <Link to="/make/model">GO NOW</Link>
+  </div>
 );
 
 export default HomePage;

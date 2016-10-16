@@ -1,10 +1,9 @@
 import React from 'react';
-import CoreLayout from '../../layouts/coreLayout';
 
 const SearchPage = () => (
-  <CoreLayout>
+  <div>
     <h2>SearchPage</h2>
-  </CoreLayout>
+  </div>
 );
 
 export default SearchPage;
