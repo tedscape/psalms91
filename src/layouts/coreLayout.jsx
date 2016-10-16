@@ -4,12 +4,12 @@ import PageHeader from '../components';
 const navMenuItems = [
   {
     id: '0',
-    link: 'Home',
+    link: '/',
     text: 'Home',
   },
   {
     id: '1',
-    link: 'Search',
+    link: '/Search',
     text: 'Search',
   },
 ];
