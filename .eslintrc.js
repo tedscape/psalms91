@@ -7,7 +7,8 @@ module.exports = {
         "import"
     ],
     "rules": {
-        "react/forbid-prop-types": "off"
+        "react/forbid-prop-types": "off",
+        "linebreak-style": "off"
     },
     "env": {
         "browser": true,

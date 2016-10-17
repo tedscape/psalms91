@@ -2,6 +2,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var autoprefixer = require('autoprefixer');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 //In Node.js, __dirname is always the directory in which the currently executing script resides
@@ -23,7 +24,7 @@ var config = {
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js',
-        publicPath: '/public/'
+        publicPath: '/public'
 
     },
     module: {
@@ -74,6 +75,9 @@ var config = {
         extensions: ['.js', '.jsx'] 
     },
     plugins: [
+        new CleanWebpackPlugin(['public'], {
+            root: __dirname,
+        }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
